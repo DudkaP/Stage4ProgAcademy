@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestProgAcademy</title>
+</head>
+<body>
+<form name="price" onsubmit="return validateForm()">
+    What is Bitcoin price today? <input type="number" name="btc">
+    <br>
+    How much $ do you have? <input type="number" name="dol">
+    <br>
+    <input type="submit" value="Calculate">
+</form>
+
+<script>
+
+    function validateForm() {
+        let btc = document.forms["price"]["btc"].value;
+        let dol = document.forms["price"]["dol"].value;
+        if (btc === "") {
+            alert("Bitcoin price must be !!!");
+            return false;
+        } else if (dol === "") {
+            alert("$ must be !!!");
+            return false;
+        } else {
+            document.write('You can buy ' + dol / btc + ' Bitcoin');
+            // alert('You can buy ' + dol / btc + ' Bitcoin');
+        }
+    }
+</script>
+</body>
+</html>
